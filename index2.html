@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	</head>
+	<body ng-controller="myCtrl">
+		<ul class="container">
+			<li ng-repeat="provice in names">
+				{{provice.name}}
+				<ul>
+					<li ng-repeat="city in provice.cities">
+						{{city.name}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>	
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+		
+	
+</html>
+
+<script type="text/javascript">
+    var app=angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+	var provices=[
+    {
+    	"name":"河南",
+    	cities:[
+    	{"name":"郑州"},
+    	{"name":"郑州"},
+    	{"name":"郑州"}
+    	]
+    },
+    {
+    	"name":"河南2",
+    	cities:[
+    	{"name":"郑州"},
+    	{"name":"郑州"},
+    	{"name":"郑州"}
+    	]
+    },
+    {
+    	"name":"河南3",
+    	cities:[
+    	{"name":"郑州"},
+    	{"name":"郑州"},
+    	{"name":"郑州"}
+    	]
+    }
+    ];
+    $scope.names=provices;
+    
+    
+    
+ });
+</script>

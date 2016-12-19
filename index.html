@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>	
+	</head>
+	<body ng-controller="myCtrl">
+		<!--{{user.userName}}-->
+		<input type="text" name="" id="" value="" ng-model="name"/>
+		{{name}}
+		
+	</body>
+</html>
+<script type="text/javascript">
+    var app=angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+    	/*$scope.useName="zhangsana";*/
+    $scope.name="xiao";
+    
+    
+    
+    
+    
+    	
+    	
+    	
+    });
+    
+    /*  //对象
+	var app=angular.module("myApp",[]);
+	app.controller("myCtrl",function($scope){
+		$scope.user={
+			"userName":"张三",
+			"age":"20",
+			"sex":"女"
+		};
+	})*/
+	
+	
+	
+</script>
