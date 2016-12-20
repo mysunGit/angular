@@ -3,21 +3,43 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>	
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</head>
 	<body ng-controller="myCtrl">
 		<!--{{user.userName}}-->
 <!-- 		<input type="text" name="" id="" value="" ng-model="name"/>
 		{{name}} -->
 		
-		<select name="" ng-model="car">
+<!-- 		<select name="" ng-model="car">
 			<option value="宝马">宝马</option>
 			<option value="奔驰">奔驰</option>
 			<option value="奥迪">奥迪</option>
 		</select>
 		您喜欢{{car}}车
 		<input ng-model="userName" />
-		{{userName}}
+		{{userName}} -->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel {{$index==0?'panel-danger':'panel-primary'}}" ng-repeat="provice in provices">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}" aria-expanded="true" aria-controls="collapseOne">
+                    {{provice.name}}
+                </a>
+            </h4>
+        </div>
+        <div id="collapse{{$index}}" class="panel-collapse collapse {{$index==0?'in':''}}" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                <!--待更改-->
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat = "city in provice.cities">
+                        {{city.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 		
 		
 		
@@ -53,7 +75,7 @@
     	
     	
     	
-    });
+   // });
     
     /*4.  //对象
 	var app=angular.module("myApp",[]);
@@ -66,36 +88,36 @@
 	})*/
 
 //5.
-	//var app = angular.module("myApp",[]);
-// 		app.controller("myCtrl",function($scope){
-// 			var provices = [
-// 				{
-// 					"name":"浙江",
-// 					"cities":[
-// 						{"name":"金华"},
-// 						{"name":"杭州"},
-// 						{"name":"温州"}
-// 					]
-// 				},
-// 				{
-// 					"name":"河南",
-// 					"cities":[
-// 						{"name":"郑州"},
-// 						{"name":"洛阳"},
-// 						{"name":"开封"}
-// 					]
-// 				},
-// 				{
-// 					"name":"江苏",
-// 					"cities":[
-// 						{"name":"南京"},
-// 						{"name":"苏州"},
-// 						{"name":"徐州"}
-// 					]
-// 				}
-// 			];
-// 			$scope.provices = provices;
-// 		});
+	var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+        var provices = [
+            {
+                "name":"浙江",
+                "cities":[
+                    {"name":"金华"},
+                    {"name":"杭州"},
+                    {"name":"温州"}
+                ]
+            },
+            {
+                "name":"河南",
+                "cities":[
+                    {"name":"郑州"},
+                    {"name":"洛阳"},
+                    {"name":"开封"}
+                ]
+            },
+            {
+                "name":"江苏",
+                "cities":[
+                    {"name":"南京"},
+                    {"name":"苏州"},
+                    {"name":"徐州"}
+                ]
+            }
+        ];
+        $scope.provices = provices;
+    });
 	
 	
 </script>
